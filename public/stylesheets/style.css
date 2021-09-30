@@ -1,8 +1,98 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "nav main aside"
+    "footer footer footer";
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 20% auto 20%;
 }
 
-a {
-  color: #00B7FF;
+body>header {
+  grid-area: header;
+  display: flex;
+  background-color: blueviolet;
+  padding: 20px;
+}
+
+body>header>img {
+  width: 200px;
+}
+
+body>header>section {
+  width: 100%;
+  text-align: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  margin: auto;
+}
+
+body>nav {
+  grid-area: nav;
+  background-color: blueviolet;
+  color: white;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+body>nav>section {
+  display: flex;
+  flex-flow: column;
+  padding: 20px;
+}
+
+body>nav>section>a {
+  color: white;
+  text-decoration: none;
+}
+
+body>aside {
+  grid-area: aside;
+  border: 2px solid blueviolet;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+body>aside>section {
+  display: flex;
+  flex-flow: column;
+}
+
+body>main {
+  grid-area: main;
+  padding: 20px;
+  min-height: calc(100vh - 504px);
+}
+
+body>footer {
+  grid-area: footer;
+  background-color: blueviolet;
+  color: white;
+  padding: 20px 60px;
+  margin-top: 20px;
+}
+
+body>main table {
+  border-spacing: 0;
+  margin: auto;
+}
+body>main table td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+body>main table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+body>main table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: orangered;
+  color: white;
 }
